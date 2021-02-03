@@ -16,10 +16,11 @@ class CreateSirumonosTable extends Migration
         Schema::create('sirumonos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->integer('bunrui')->nullable()->change();
-            $table->integer('kakaku')->nullable()->change();
-            $table->integer('genka')->nullable()->change();
-            $table->string('name')->nullable()->change();
+            $table->integer('bunrui');
+            $table->integer('kakaku');
+            $table->integer('genka');
+            $table->string('name');
+            $table->boolean('display');
         });
     }
 
@@ -30,10 +31,7 @@ class CreateSirumonosTable extends Migration
      */
     public function down()
     {
-        $table->integer('bunrui')->nullable(false)->change();
-        $table->integer('kakaku')->nullable(false)->change();
-        $table->integer('genka')->nullable(false)->change();
-        $table->string('name')->nullable(false)->change();
+       
         Schema::dropIfExists('sirumonos');
     }
 }
