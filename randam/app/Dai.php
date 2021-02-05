@@ -4,8 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Shushoku extends Model
+class Dai extends Model
 {
-    
-    
+    //
 }

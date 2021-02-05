@@ -9,7 +9,7 @@ class FukushokusController extends Controller
 {
     public function index()
     {
-        $fukushokus = Fukushoku::all()->where('display', true);
+        $fukushokus = Fukushoku::where('display', true)->orderBy('bunrui')->get();
         //$shushokus = Shushoku::where('display', true);
 
         // メッセージ一覧ビューでそれを表示

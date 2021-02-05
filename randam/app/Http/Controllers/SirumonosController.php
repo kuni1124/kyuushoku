@@ -8,7 +8,7 @@ class SirumonosController extends Controller
 {
     public function index()
     {
-        $sirumonos = Sirumono::all()->where('display', true);
+        $sirumonos = Sirumono::where('display', true)->orderBy('bunrui')->get();
         //$shushokus = Shushoku::where('display', true);
 
         // メッセージ一覧ビューでそれを表示
